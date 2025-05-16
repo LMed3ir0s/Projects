@@ -2,8 +2,7 @@
 
 Este repositório é dedicado a armazenar todos os projetos de estudo e prática desenvolvidos. Os projetos estão organizados por linguagem de programação para facilitar a navegação, manutenção e evolução.
 
-> ⚠️ **Aviso**: Todos os projetos contidos aqui são desenvolvidos com fins educacionais, de estudo pessoal e demonstração de conhecimento técnico. Não são soluções prontas para uso em produção e não há garantias ou responsabilidades sobre seu funcionamento.
-
+> ⚠️ **Aviso**: Todos os projetos contidos aqui são desenvolvidos com fins educacionais, de estudo pessoal e demonstração de conhecimento técnico. Não são soluções prontas para uso em produção e não há garantias ou responsabilidades por quaisquer consequências decorrentes do uso."
 ---
 
 ## 📂 Estrutura Geral
