@@ -9,14 +9,7 @@
 
 Projeto simples de sistema bancário em Java, com simulação de operações como depósito e saque, utilizando entrada e saída de dados com `JOptionPane`.
 
-O objetivo principal deste projeto é praticar conceitos de **orientação a objetos (POO)**, criação de classes como `Cliente` e `Conta`, e organização de código em camadas **MVC**.
-
----
-
-## Ferramentas:
-
-* Java 17
-* IntelliJ IDEA (Community Edition)
+O objetivo principal deste projeto é praticar conceitos de **orientação a objetos (POO)** e organização de código em camadas **MVC**.
 
 ---
 
@@ -39,8 +32,8 @@ cd Projects/Java/SistemaBancario
 
 ```
 
-📂 Estrutura planejada
-
+## 📂 Estrutura planejada
+```bash
 SistemaBancario/
 ├── model/
 │   ├── Cliente.java
@@ -51,7 +44,7 @@ SistemaBancario/
 │   └── ContaService.java (planejado)
 └── view/
     └── Main.java
-
+```
 O projeto está sendo estruturado com foco em organização e boas práticas de desenvolvimento.
 
 ---
@@ -65,19 +58,21 @@ SistemaBancario/
 │   └── Conta.java
 ├── view/
 │   └── Main.java
+```
+---
 
-🔧 Em breve: será criado o pacote controller/ com a classe ContaController.
+## ▶️ Funcionalidades atuais:
+- Cadastro de clientes com validação de dados
 
-▶️ Funcionalidades atuais
-✅ Cadastro de clientes com validação de dados
+- Criação de conta bancária vinculada ao cliente
 
-✅ Criação de conta bancária vinculada ao cliente
+- Operações de depósito e saque com verificação de saldo
 
-✅ Operações de depósito e saque com verificação de saldo
+- Interface com JOptionPane para entrada e exibição de dados
 
-✅ Interface com JOptionPane para entrada e exibição de dados
+---
 
-🧪 Progresso
+## 🧪 Progresso
 
 * [x] Estruturação inicial da pasta do projeto
 
@@ -91,9 +86,24 @@ SistemaBancario/
 
 * [ ] Futuro desenvolvimento de testes unitários
 
-📄 Licença
+---
+
+## 📄 Licença
+
 Este projeto está licenciado sob a licença MIT.
 
-👨‍💻 Autor
-Lucas Medeiros
+Você pode usar, modificar, distribuir e até comercializar este software livremente, desde que mantenha o aviso de copyright e esta permissão em todas as cópias ou partes substanciais do software.
+
+Aviso:
+Este software é fornecido "no estado em que se encontra", sem garantias de qualquer tipo, expressas ou implícitas.
+O autor não se responsabiliza por danos, perdas ou mau uso decorrentes do uso deste programa.
+
+---
+
+## 👨‍💻 Autor
+
+**Lucas Medeiros**
 Desenvolvedor Java / Python | QA Tester | Engenheiro Civil
+[GitHub](https://github.com/LMed3ir0s)
+
+---
