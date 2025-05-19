@@ -10,10 +10,12 @@ Este repositório é dedicado a armazenar todos os projetos de estudo e prática
 ```bash
 Projects/
 ├── Java/
-│   └── EncurtadorURL/        # Projeto de encurtador de URLs usando Spring Boot
+│   ├── Proj_Banco/            # Sistema bancário simples com Java, POO e organização baseada em MVC
+│   └── Proj_EncurtadorURL/    # Encurtador de URLs com Spring Boot, arquitetura em camadas, uso de UUID
 ├── Python/
-│   └── ConversorBinario/     # Exemplo de projeto Python
+│   └── ConversorBinario/      # Conversor de decimal para binário com POO e histórico salvo em JSON 
 ...
+
 ```
 
 Cada subpasta representa um projeto específico, com seu próprio código-fonte, `README.md` descritivo e controle de versão. Essa estrutura facilita o aprendizado, versionamento e reaproveitamento de códigos em diferentes tecnologias.
