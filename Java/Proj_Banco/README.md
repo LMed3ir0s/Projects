@@ -36,8 +36,8 @@ cd Projects/Java/SistemaBancario
 ```bash
 SistemaBancario/
 ├── model/
-│   ├── Cliente.java
-│   └── Conta.java
+│   ├── cliente/
+│   └── conta/
 ├── controller/
 │   └── ContaController.java (planejado)
 ├── service/
@@ -54,10 +54,17 @@ O projeto está sendo estruturado com foco em organização e boas práticas de 
 ```bash
 SistemaBancario/
 ├── model/
-│   ├── Cliente.java
-│   └── Conta.java
+│   ├── cliente/
+│   │   ├── Cliente.java
+│   │   ├── PessoaFisica.java
+│   │   └── PessoaJuridica.java
+│   ├── conta/
+│   │   ├── Conta.java
+│   │   ├── ContaCorrente.java
+│   │   └── ContaPoupanca.java
 ├── view/
 │   └── Main.java
+
 ```
 ---
 

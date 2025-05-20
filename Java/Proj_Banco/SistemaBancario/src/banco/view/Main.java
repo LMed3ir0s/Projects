@@ -1,38 +1,48 @@
 package banco.view;
 
 import javax.swing.JOptionPane;
-import banco.model.Cliente;
-import banco.model.Conta;
+import banco.model.cliente.Cliente;
+import banco.model.cliente.PessoaFisica;
+import banco.model.cliente.PessoaJuridica;
+import banco.model.conta.Conta;
 
 
 public class Main {
     public static void main(String[] args){
 
-    Cliente cliente_01 = new Cliente("Lucas_01");
-    Cliente cliente_02 = new Cliente("Lucas_02", " Cidade_02", " Distrito-Federal");
-    Cliente cliente_03 = new Cliente("", " Cidade_03", "Distrito-Federal");
-    Cliente cliente_04 = new Cliente("Lucas_04", "", "Distrito-Federal");
-    Cliente cliente_05 = new Cliente("Lucas_05", " Cidade_05", "");
+    Cliente cliente = new Cliente();
 
-    JOptionPane.showMessageDialog(null,cliente_01.listDados());
-    JOptionPane.showMessageDialog(null,cliente_02.listDados());
-    JOptionPane.showMessageDialog(null,cliente_03.listDados());
-    JOptionPane.showMessageDialog(null,cliente_04.listDados());
-    JOptionPane.showMessageDialog(null,cliente_05.listDados());
-    JOptionPane.showMessageDialog(null,"Possuimos " + Cliente.qtdClientes() + " cliente(s) cadastrados");
+    String tipoCliente = JOptionPane.showInputDialog(null,"Escolha o tipo de cliente:\n" +
+            "F - Pessoa Física\n" +
+            "J- Pessoa Jurídica");
 
-    Conta conta_01 = new Conta(cliente_01);
-//    Conta conta_02 = new Conta(cliente_02);
-//    Conta conta_03 = new Conta(cliente_03);
-//    Conta conta_04 = new Conta(cliente_04);
-//    Conta conta_05 = new Conta(cliente_05);
+    if (tipoCliente.equals("F")){
+        cliente = new PessoaFisica();
+        ((PessoaFisica)cliente).setName(JOptionPane.showInputDialog(null,"Nome do Cliente: ")); // => casting
+        ((PessoaFisica)cliente).setCpf(JOptionPane.showInputDialog(null,"CPF do Cliente: ")); // => casting
+    } else if (tipoCliente.equals("J")){
+        cliente = new PessoaJuridica();
+        ((PessoaJuridica)cliente).setRazaoSocial(JOptionPane.showInputDialog(null,"Razão Social: "));
+        ((PessoaJuridica)cliente).setCnpj((JOptionPane.showInputDialog(null,"CNPJ do Cliente: ")));
+    } else {
+        JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA! Encerrando o programa...");
+        return;
+    }
 
-    conta_01.deposit(1000.0);
+    cliente.setCity(JOptionPane.showInputDialog(null,"Cidade do Cliente: "));
+    cliente.setState(JOptionPane.showInputDialog(null,"Estado do Cliente: "));
+
+    JOptionPane.showMessageDialog(null,"DADOS DO CLIENTE\n\n" +
+            cliente.listDados());
+
+    Conta conta = new Conta(cliente);
+
+    JOptionPane.showMessageDialog(null,"DADOS DA CONTA\n\n" + conta.listDados());
 
     int option = 0; // => Variável input user (p/ opção do menu)
     String ret;  // => Variável temporária para armazenar o input user (valor)
     do {
-        String message = " SALDO EM CONTA: R$" + conta_01.getFormattedBalance() + "\n\n" +
+        String message = " SALDO EM CONTA: R$" + conta.getFormattedBalance() + "\n\n" +
                 "OPÇÕES:\n " +
                 "1 - Depositar valor\n" +
                 "2 - Sacar valor\n" +
@@ -53,7 +63,7 @@ public class Main {
 
                     try{
                         double value = Double.parseDouble(ret);
-                        conta_01.deposit(value);
+                        conta.deposit(value);
                         JOptionPane.showMessageDialog(null, "Depósito realizado!");
                         break;
                     } catch (NumberFormatException ex) {
@@ -74,7 +84,7 @@ public class Main {
 
                     try{
                         double value = Double.parseDouble(ret);
-                        if (conta_01.withdraw(value)){
+                        if (conta.withdraw(value)){
                             JOptionPane.showMessageDialog(null,"Saque realizado!");
                         } else {
                             JOptionPane.showMessageDialog(null, "FALHA NO SAQUE!");
