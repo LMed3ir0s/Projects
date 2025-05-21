@@ -5,6 +5,8 @@ import banco.model.cliente.Cliente;
 import banco.model.cliente.PessoaFisica;
 import banco.model.cliente.PessoaJuridica;
 import banco.model.conta.Conta;
+import banco.model.conta.ContaCorrente;
+import banco.model.conta.ContaPoupanca;
 
 
 public class Main {
@@ -35,7 +37,17 @@ public class Main {
     JOptionPane.showMessageDialog(null,"DADOS DO CLIENTE\n\n" +
             cliente.listDados());
 
-    Conta conta = new Conta(cliente);
+    Conta conta;
+
+    String tipoConta = JOptionPane.showInputDialog(null,"Tipo de conta:\n" +
+            "C - Conta Corrente\n" +
+            "P - Conta Poupança");
+
+    if (tipoConta.equals("P")){
+        conta = new ContaPoupanca(cliente);
+    } else {
+        conta = new ContaCorrente(cliente);
+    }
 
     JOptionPane.showMessageDialog(null,"DADOS DA CONTA\n\n" + conta.listDados());
 
