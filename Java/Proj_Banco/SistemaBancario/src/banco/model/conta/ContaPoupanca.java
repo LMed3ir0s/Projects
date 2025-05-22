@@ -43,10 +43,14 @@ public class ContaPoupanca extends Conta{
         }
     }
 
- public void applicationYield(double value){
-        if (bday == Calendar.getInstance().get(Calendar.DAY_OF_MONTH)){
-            balance = balance + (balance * yield / 100);
-        }
+ public double applicationYield(double value){
+     int today = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+     if (bday == today) {
+         double rendimento = value * yield / 100;
+         balance += rendimento;
+         return rendimento;
+     }
+     return 0.0;
     }
 
  }

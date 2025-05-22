@@ -58,9 +58,13 @@ public class ContaCorrente extends Conta {
         return dados;
     }
 
-    public void aplicarJuros(){
-        if(balance<0)
-            balance = balance - (balance * juros / 100);
+    public double applicationJuros(){
+        if(balance<0){
+            double jurosAplicado = balance * juros / 100;
+            balance -= jurosAplicado;
+            return jurosAplicado;
+        }
+        return 0.0;
     }
 
 }
