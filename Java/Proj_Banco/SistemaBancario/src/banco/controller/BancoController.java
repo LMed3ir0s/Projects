@@ -52,7 +52,7 @@ public class BancoController {
             throw new IllegalArgumentException("Cidade inválida");
         }
         city = city.trim();
-        return city
+        return city;
     }
 
     // => Valida Estado
