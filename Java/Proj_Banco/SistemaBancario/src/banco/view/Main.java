@@ -1,41 +1,48 @@
 package banco.view;
 
 import javax.swing.JOptionPane;
+
+import banco.controller.BancoController;
 import banco.model.cliente.Cliente;
 import banco.model.cliente.PessoaFisica;
 import banco.model.cliente.PessoaJuridica;
 import banco.model.conta.Conta;
 import banco.model.conta.ContaCorrente;
 import banco.model.conta.ContaPoupanca;
+import banco.utils.BancoUtils;
 
 
 public class Main {
     public static void main(String[] args){
 
-    Cliente cliente = new Cliente();
-
-    String tipoCliente = JOptionPane.showInputDialog(null,"Escolha o tipo de cliente:\n" +
+    String tipoCliente = BancoUtils.solicitaInput("Escolha o tipo de cliente:\n" +
             "F - Pessoa Física\n" +
             "J- Pessoa Jurídica");
 
     if (tipoCliente.equals("F")){
-        cliente = new PessoaFisica();
-        ((PessoaFisica)cliente).setName(JOptionPane.showInputDialog(null,"Nome do Cliente: ")); // => casting
-        ((PessoaFisica)cliente).setCpf(JOptionPane.showInputDialog(null,"CPF do Cliente: ")); // => casting
-    } else if (tipoCliente.equals("J")){
-        cliente = new PessoaJuridica();
-        ((PessoaJuridica)cliente).setRazaoSocial(JOptionPane.showInputDialog(null,"Razão Social: "));
-        ((PessoaJuridica)cliente).setCnpj((JOptionPane.showInputDialog(null,"CNPJ do Cliente: ")));
-    } else {
-        JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA! Encerrando o programa...");
+        var name = BancoUtils.solicitaInput("Nome do Cliente: ");
+        BancoController.validaNome(name);
+        var cpf = BancoUtils.solicitaInput("CPF do Cliente: ");
+        BancoController.validaCPF(cpf);
+        var city = BancoUtils.solicitaInput("Cidade do Cliente: ");
+        BancoController.validaCity(city);
+        var state = BancoUtils.solicitaInput("Estado do Cliente: ");
+        BancoController.validaState(state);
+        BancoController.criaClientePessoaFisica(name,cpf,city,state);
+    } else if (tipoCliente.equals("J")) {
+        var razaoSocial = BancoUtils.solicitaInput("Razão Social: ");
+        BancoController.validaRazaoSocial(razaoSocial);
+        var cnpj = BancoUtils.solicitaInput("CNPJ do Cliente: ");
+        BancoController.validaCNPJ(cnpj);
+        var city = BancoUtils.solicitaInput("Cidade do Cliente: ");
+        BancoController.validaCity(city);
+        var state = BancoUtils.solicitaInput("Estado do Cliente: ");
+        BancoController.validaState(state);
+        BancoController.criaClientePessoaJuridica(razaoSocial,cnpj,city,state);
+    }else{
+        BancoUtils.messageView("OPÇÃO INVÁLIDA! Encerrando o programa...");
         return;
     }
-
-    cliente.setCity(JOptionPane.showInputDialog(null,"Cidade do Cliente: "));
-    cliente.setState(JOptionPane.showInputDialog(null,"Estado do Cliente: "));
-
-    JOptionPane.showMessageDialog(null,"DADOS DO CLIENTE\n\n" +
-            cliente.listDados());
 
     Conta conta;
 
