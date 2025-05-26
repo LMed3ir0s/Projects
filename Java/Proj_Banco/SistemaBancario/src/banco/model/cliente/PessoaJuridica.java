@@ -15,7 +15,7 @@ public class PessoaJuridica extends Cliente{
     }
 
     // => Construtor cliente com todos atributos à serem definidos
-    public PessoaJuridica(String city, String state, String cnpj, String razaoSocial){
+    public PessoaJuridica(String cnpj, String razaoSocial, String city, String state){
         super(city, state);
         this.cnpj = cnpj;
         this.razaoSocial = razaoSocial;

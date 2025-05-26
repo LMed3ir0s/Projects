@@ -16,7 +16,7 @@ public class PessoaFisica extends Cliente {
     }
 
     // => Construtor cliente com todos atributos à serem definidos
-    public PessoaFisica(String city, String state, String name, String cpf){
+    public PessoaFisica(String name, String cpf, String city, String state){
         super(city, state);
         this.name = name;
         this.cpf = cpf;

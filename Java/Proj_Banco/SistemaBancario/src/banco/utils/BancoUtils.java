@@ -14,10 +14,10 @@ public class BancoUtils {
     }
 
     // => Retorna Message View
-    public static String messageView(String message){
+    public static void messageView(String message){
         BancoUtils.validaCampoObjeto(message,"MESSAGE não pode ser Nulo");
         JOptionPane.showMessageDialog(null,message);
-        return message;
+//        return message;
     }
 
     // => Valida Campo
