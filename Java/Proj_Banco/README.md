@@ -95,7 +95,7 @@ SistemaBancario/
 
 * [x] Lógica das operações concentrada no Main.java (pendente refatoração para controller)
 
-* [ ] Desenvolvimento das camadas Controller e Service
+* [x] Desenvolvimento das camadas Controller e Service
 
 * [ ] Futuro desenvolvimento de testes unitários
 
