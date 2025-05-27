@@ -1,5 +1,6 @@
 package banco.service;
 
+import banco.model.agencia.Agencia;
 import banco.model.cliente.PessoaFisica;
 import banco.model.cliente.PessoaJuridica;
 import banco.model.conta.Conta;
@@ -10,6 +11,14 @@ import banco.utils.BancoUtils;
 import banco.utils.ContaUtils;
 
 public class BancoService {
+
+    // => Metodo cria Agencia
+    public  static Agencia criarAgencia(int number, String name){
+        BancoUtils.validaCampoObjeto(number,"NUMERO AGENCIA");
+        BancoUtils.validaCampoObjeto(name,"NOME AGENCIA");
+        var agencia = new Agencia(number,name);
+        return agencia;
+    }
 
     // => Cria cliente Pessoa Fisica
     public static PessoaFisica criarClientePessoaFisica(String name, String cpf, String city, String state){
@@ -31,7 +40,7 @@ public class BancoService {
         return clientePessoaJuridica;
     }
 
-    // => Solicita Lista dados do Cliente/Conta se nao nulo
+    // => Solicita Lista dados Cliente/Conta
     public String listDados(Cliente cliente, Conta conta){
         BancoUtils.validaCampoObjeto(cliente,"Cliente");
         BancoUtils.validaCampoObjeto(conta,"Conta");
@@ -40,14 +49,14 @@ public class BancoService {
         return cliente_var + "\n" + conta_var;
     }
 
-    // => Requisita saque se conta nao nula e valor valido
+    // => Requisita saque
     public boolean withdraw(Conta conta, double value) {
         BancoUtils.validaCampoObjeto(conta,"Conta");
         ContaUtils.validaWihdraw(value);
         return conta.withdraw(value);
     }
 
-    // => Aplica rendimento se ContaPoupanca
+    // => Aplica rendimento ContaPoupanca
     public double applicationYield(Conta conta, double value) {
         BancoUtils.validaCampoObjeto(conta,"Conta");
         ContaUtils.validaContaPoupanca(conta);
@@ -58,7 +67,7 @@ public class BancoService {
         return application;
     }
 
-    // => Aplica juros se ContaCorrente
+    // => Aplica juros ContaCorrente
     public double applicationJuros(Conta conta){
         ContaUtils.validaContaCorrente(conta);
 
@@ -67,7 +76,7 @@ public class BancoService {
         return application;
     }
 
-    // => Deposita na ContaPoupanca
+    // => Deposita ContaPoupanca
     public Conta depositContaPoupanca(Conta conta, double value){
         ContaUtils.validaContaPoupanca(conta);
         ContaUtils.validaDeposit(value);
@@ -75,7 +84,7 @@ public class BancoService {
         return conta;
     }
 
-    // => Deposita na ContaCorrente
+    // => Deposita ContaCorrente
     public Conta depositContaCorrente(Conta conta, double value){
         ContaUtils.validaContaCorrente(conta);
         ContaUtils.validaDeposit(value);

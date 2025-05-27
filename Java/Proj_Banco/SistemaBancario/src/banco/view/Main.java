@@ -1,102 +1,140 @@
 package banco.view;
 
 import javax.swing.JOptionPane;
-
 import banco.controller.BancoController;
+import banco.model.agencia.Agencia;
 import banco.model.cliente.Cliente;
 import banco.model.conta.Conta;
-import banco.model.conta.ContaCorrente;
-import banco.model.conta.ContaPoupanca;
 import banco.utils.BancoUtils;
 
 import static banco.controller.BancoController.newClienteType;
 
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-    // => Cria Cliente
-    String newCliente = BancoUtils.solicitaInput("Escolha o tipo de cliente:\n" +
-            "F - Pessoa Física\n" +
-            "J- Pessoa Jurídica");
+        //Cria Agencia
+        var number = Integer.parseInt(BancoUtils.solicitaInput("Número da Agência: "));
+        var name = BancoUtils.solicitaInput("Nome da Agência: ");
+        Agencia agencia = BancoController.newAgencia(number, name);
 
-    Cliente cliente = BancoController.newClienteType(newCliente);
+        String mainMenu = "";
 
-    // => Escolhe Tipo de Conta
-    String tipoConta = BancoUtils.solicitaInput("Tipo de conta:\n" +
-            "C - Conta Corrente\n" +
-            "P - Conta Poupança");
+        do {
+            mainMenu = BancoUtils.solicitaInput(
+                    "Cadastro de Contas para a agência " +
+                            agencia.getNumber() +
+                            " - " +
+                            agencia.getName() +
+                            "\n" +
+                            "\nOPÇÕES:\n" +
+                            "1 - Incluir cliente e conta\n" +
+                            "2 - Listar contas cadastradas\n" +
+                            "3 - Sair do sistema"
+            );
 
-    Conta conta = BancoController.newContaType(tipoConta, cliente);
+            switch (mainMenu) {
+                case "1":
+                    // => Cria Cliente
+                    String newCliente = BancoUtils.solicitaInput("Escolha o tipo de cliente:\n" +
+                            "F - Pessoa Física\n" +
+                            "J- Pessoa Jurídica");
 
-//    JOptionPane.showMessageDialog(null,"DADOS DA CONTA\n\n" + conta.listDados());
+                    Cliente cliente = BancoController.newClienteType(newCliente);
 
-    int option = 0; // => Variável input user (p/ opção do menu)
-    String ret;  // => Variável temporária para armazenar o input user (valor)
-    do {
-        String message = " SALDO EM CONTA: R$" + conta.getFormattedBalance() + "\n\n" +
-                "OPÇÕES:\n " +
-                "1 - Depositar valor\n" +
-                "2 - Sacar valor\n" +
-                "3 - Finalizar";
+                    // => Escolhe Tipo de Conta
+                    String tipoConta = BancoUtils.solicitaInput("Tipo de conta:\n" +
+                            "C - Conta Corrente\n" +
+                            "P - Conta Poupança");
 
-        try {
-            option = Integer.parseInt(JOptionPane.showInputDialog(null, message));
-            switch (option) {
-                // => Depositar
-                case 1:
-                    ret = BancoUtils.solicitaInput("Valor do depósito: ");
+                    Conta conta = BancoController.newContaType(tipoConta, cliente);
+                    agencia.addAccount(conta);
 
-                    // Verifica se o valor é nulo ou vazio
-                    if (ret == null || ret.trim().isEmpty()){
-                        BancoUtils.messageView("Operação cancelada ou valor vazio!");
-                        break;
-                    }
-                    try{
-                        double value = Double.parseDouble(ret);
-                        conta.deposit(value);
-                        BancoUtils.messageView("Depósito realizado!");
-                        break;
-                    } catch (NumberFormatException ex) {
-                        BancoUtils.messageView("Valor inválido!");
-                        break;
-                    }
+                    int option = 0; // => Variável input user (p/ opção do menu)
+                    String ret;  // => Variável temporária para armazenar o input user (valor)
+                    do {
+                        String message = " SALDO EM CONTA: R$" + conta.getFormattedBalance() + "\n\n" +
+                                "OPÇÕES:\n " +
+                                "1 - Depositar valor\n" +
+                                "2 - Sacar valor\n" +
+                                "3 - Finalizar";
+
+                        try {
+                            option = Integer.parseInt(JOptionPane.showInputDialog(null, message));
+                            switch (option) {
+                                // => Depositar
+                                case 1:
+                                    ret = BancoUtils.solicitaInput("Valor do depósito: ");
+
+                                    if (ret == null || ret.trim().isEmpty()) {
+                                        BancoUtils.messageView("Operação cancelada ou valor vazio!");
+                                        break;
+                                    }
+                                    try {
+                                        double value = Double.parseDouble(ret);
+                                        conta.deposit(value);
+                                        BancoUtils.messageView("Depósito realizado!");
+                                        break;
+                                    } catch (NumberFormatException ex) {
+                                        BancoUtils.messageView("Valor inválido!");
+                                        break;
+                                    }
 
 
-                // => Sacar
-                case 2:
-                    ret = BancoUtils.solicitaInput("Valor do saque: ");
+                                    // => Sacar
+                                case 2:
+                                    ret = BancoUtils.solicitaInput("Valor do saque: ");
 
-                    // Verifica se o valor é nulo ou vazio
-                    if (ret == null || ret.trim().isEmpty()){
-                        BancoUtils.messageView("Operação cancelada ou valor vazio!");
-                        break;
-                    }
-                    try{
-                        double value = Double.parseDouble(ret);
-                        var saque = conta.withdraw(value);
-                        if (!saque) {
-                            BancoUtils.messageView("FALHA NO SAQUE!\n" +
-                                    "Cancelando Operação...");
-                            return;
-                        }
-                        BancoUtils.messageView("Saque realizado!");
+                                    if (ret == null || ret.trim().isEmpty()) {
+                                        BancoUtils.messageView("Operação cancelada ou valor vazio!");
+                                        break;
+                                    }
+                                    try {
+                                        double value = Double.parseDouble(ret);
+                                        var saque = conta.withdraw(value);
+                                        if (!saque) {
+                                            BancoUtils.messageView("FALHA NO SAQUE!\n" +
+                                                    "Cancelando Operação...");
+                                            return;
+                                        }
+                                        BancoUtils.messageView("Saque realizado!");
+                                    } catch (NumberFormatException ex) {
+                                        BancoUtils.messageView("Valor inválido!");
+                                    }
+                                    break;
+
+                                case 3:
+                                    BancoUtils.messageView("Ate logo!\n Encerrando...");
+                                    break;
+
+                                default:
+                                    BancoUtils.messageView("Opção inválida! Tente novamente.");
+                                    break;
+                            }
                         } catch (NumberFormatException ex) {
-                            BancoUtils.messageView("Valor inválido!");
+                            BancoUtils.messageView("OPÇÃO INVÁLIDA! Informe um número de 1 a 3.");
                         }
-                        break;
+                    } while ((option == 1) || (option == 2)); break;
 
-                        case 3:
-                            BancoUtils.messageView("Ate logo!\n Encerrando...");
-                            break;
 
-                        default:
-                            BancoUtils.messageView("Opção inválida! Tente novamente.");
-                            break;
+                case "2":
+                    if (agencia.getAccounts().size() == 0) {
+                        BancoUtils.messageView("NÃO HÁ CONTAS CADASTRADAS NO MOMENTO. ");
                     }
-        } catch (NumberFormatException ex) {
-            BancoUtils.messageView("OPÇÃO INVÁLIDA! Informe um número de 1 a 3.");
-        }
-    } while ((option == 1) || (option == 2));
+                    BancoUtils.messageView(
+                        "A Agência" +
+                        agencia.getNumber() + " - " +
+                        agencia.getName() +
+                        " possui " +
+                        agencia.getAccounts().size() +
+                        "conta(s). \n\nVeja quais são nas próximas telas"
+                    );
+
+                for (Conta umaConta : agencia.getAccounts()) {
+                    BancoUtils.messageView(umaConta.listDados());
+                } break;
+            }
+        } while ((mainMenu.equals("1") || (mainMenu.equals("2"))));
+    }
 }
-}
+

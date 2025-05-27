@@ -1,6 +1,7 @@
 package banco.controller;
 
 
+import banco.model.agencia.Agencia;
 import banco.model.cliente.Cliente;
 import banco.model.cliente.PessoaFisica;
 import banco.model.cliente.PessoaJuridica;
@@ -17,7 +18,14 @@ import java.util.function.Function;
 public class BancoController {
     private BancoService bancoService = new BancoService();
 
-    // => Metodo para executar mapUserInput
+    // => Metodo cria Agencia
+    public  static Agencia newAgencia(int number, String name){
+        BancoUtils.validaCampoObjeto(number,"NUMERO AGÊNCIA");
+        BancoUtils.validaCampoObjeto(name,"NOME AGÊNCIA");
+        return BancoService.criarAgencia(number,name);
+    }
+
+    // => Metodo executa mapUserInput
     public static Cliente newClienteType(String tipoCliente) {
         final Cliente[] clienteCriado = new Cliente[1];
 
@@ -55,7 +63,7 @@ public class BancoController {
         return null;
     }
 
-    // Map com ações para cada tipo de Conta
+    // Map tipo de Conta
     private static final Map<String, Function<Cliente, Conta>> mapTipoConta = new HashMap<>();
 
     static {
@@ -63,7 +71,7 @@ public class BancoController {
         mapTipoConta.put("P", ContaPoupanca::new);
     }
 
-    // => Metodo para executar mapTipoConta
+    // => Metodo executa mapTipoConta
     public static Conta newContaType(String tipoConta, Cliente cliente) {
         Function<Cliente, Conta> funcNewContaType = mapTipoConta.get(tipoConta.toUpperCase());
         if (funcNewContaType == null) {
