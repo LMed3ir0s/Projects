@@ -1,15 +1,15 @@
-package banco.controller;
+package main.java.br.com.sistemabancario.controller;
 
 
-import banco.model.agencia.Agencia;
-import banco.model.cliente.Cliente;
-import banco.model.cliente.PessoaFisica;
-import banco.model.cliente.PessoaJuridica;
-import banco.model.conta.Conta;
-import banco.model.conta.ContaCorrente;
-import banco.model.conta.ContaPoupanca;
-import banco.service.BancoService;
-import banco.utils.BancoUtils;
+import main.java.br.com.sistemabancario.model.agencia.Agencia;
+import main.java.br.com.sistemabancario.model.cliente.Cliente;
+import main.java.br.com.sistemabancario.model.cliente.PessoaFisica;
+import main.java.br.com.sistemabancario.model.cliente.PessoaJuridica;
+import main.java.br.com.sistemabancario.model.conta.Conta;
+import main.java.br.com.sistemabancario.model.conta.ContaCorrente;
+import main.java.br.com.sistemabancario.model.conta.ContaPoupanca;
+import main.java.br.com.sistemabancario.service.BancoService;
+import main.java.br.com.sistemabancario.utils.BancoUtils;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -29,8 +29,8 @@ public class BancoController {
     public static Cliente newClienteType(String tipoCliente) {
         final Cliente[] clienteCriado = new Cliente[1];
 
-        Runnable runNewClienteType = switch (tipoCliente.toUpperCase()) {
-            case "F" -> () -> {
+        switch (tipoCliente.toUpperCase()) {
+            case "F" -> {
                 var name = BancoUtils.solicitaInput("Nome do Cliente: ");
                 BancoController.validaNome(name);
                 var cpf = BancoUtils.solicitaInput("CPF do Cliente: ");
@@ -40,8 +40,9 @@ public class BancoController {
                 var state = BancoUtils.solicitaInput("Estado do Cliente: ");
                 BancoController.validaState(state);
                 clienteCriado[0] = BancoController.criaClientePessoaFisica(name, cpf, city, state);
-            };
-            case "J" -> () -> {
+                return clienteCriado[0];
+            }
+            case "J" -> {
                 var razaoSocial = BancoUtils.solicitaInput("Razão Social: ");
                 BancoController.validaRazaoSocial(razaoSocial);
                 var cnpj = BancoUtils.solicitaInput("CNPJ do Cliente: ");
@@ -50,16 +51,11 @@ public class BancoController {
                 BancoController.validaCity(city);
                 var state = BancoUtils.solicitaInput("Estado do Cliente: ");
                 BancoController.validaState(state);
-                BancoController.criaClientePessoaJuridica(cnpj, razaoSocial, city, state);
-            };
-            default -> null;
-        };
-
-        if (runNewClienteType == null) {
-            BancoUtils.messageView("OPÇÃO INVÁLIDA! Encerrando o programa...");
-            return null;
+                clienteCriado[0] = BancoController.criaClientePessoaJuridica(cnpj, razaoSocial, city, state);
+                return clienteCriado[0];
+            }
+            default -> BancoUtils.messageView("Tipo de cliente inválido!");
         }
-        runNewClienteType.run();
         return null;
     }
 

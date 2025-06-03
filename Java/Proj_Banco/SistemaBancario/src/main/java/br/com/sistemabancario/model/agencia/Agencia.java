@@ -1,6 +1,6 @@
-package banco.model.agencia;
+package main.java.br.com.sistemabancario.model.agencia;
 
-import banco.model.conta.Conta;
+import main.java.br.com.sistemabancario.model.conta.Conta;
 
 import java.util.ArrayList;
 import java.util.List;

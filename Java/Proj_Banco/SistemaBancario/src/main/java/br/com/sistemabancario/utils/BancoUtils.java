@@ -1,4 +1,4 @@
-package banco.utils;
+package main.java.br.com.sistemabancario.utils;
 
 
 import javax.swing.*;

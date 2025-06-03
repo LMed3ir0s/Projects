@@ -53,23 +53,24 @@ O projeto está sendo estruturado com foco em organização e boas práticas de 
 
 ```bash
 SistemaBancario/
-├── model/
-│   ├── cliente/
-│   │   ├── Cliente.java
-│   │   ├── PessoaFisica.java
-│   │   └── PessoaJuridica.java
-│   ├── conta/
-│   │   ├── Conta.java
-│   │   ├── ContaCorrente.java
-│   │   └── ContaPoupanca.java
-├── view/
-│   └── Main.java
-├── controller/
-│   ├── BancoController.java
-├── utils/
-│   ├── BancoUtils.java
-├── service/
-│   └── BancoService.java
+├── .idea/
+├── lib/
+├── src/
+│   ├── resources/
+│   └── main/
+│       └── java/
+│           └── br/
+│               └── com/
+│                   └── sistemabancario/
+│                       ├── controller/
+│                       ├── database/
+│                       ├── model/
+│                       ├── service/
+│                       ├── utils/
+│                       └── view/
+├── Dockerfile
+├── sistemabancario.iml
+└── .gitignore
 
 ```
 ---
@@ -97,7 +98,11 @@ SistemaBancario/
 
 * [x] Desenvolvimento das camadas Controller e Service
 
+* [x] Integração com PostgreSQL
+
 * [ ] Futuro desenvolvimento de testes unitários
+
+* [ ] Futuro desenvolvimento Front-end
 
 ---
 

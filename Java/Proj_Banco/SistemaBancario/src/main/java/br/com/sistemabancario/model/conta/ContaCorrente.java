@@ -1,8 +1,8 @@
-package banco.model.conta;
+package main.java.br.com.sistemabancario.model.conta;
 
-import banco.model.cliente.Cliente;
-import banco.model.cliente.PessoaFisica;
-import banco.model.cliente.PessoaJuridica;
+import main.java.br.com.sistemabancario.model.cliente.Cliente;
+import main.java.br.com.sistemabancario.model.cliente.PessoaFisica;
+import main.java.br.com.sistemabancario.model.cliente.PessoaJuridica;
 
 import java.text.DecimalFormat;
 

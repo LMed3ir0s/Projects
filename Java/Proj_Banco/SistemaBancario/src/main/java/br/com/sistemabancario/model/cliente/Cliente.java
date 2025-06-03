@@ -1,4 +1,4 @@
-package banco.model.cliente;
+package main.java.br.com.sistemabancario.model.cliente;
 
 public class Cliente {
 

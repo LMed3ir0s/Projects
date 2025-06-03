@@ -1,13 +1,12 @@
-package banco.view;
+package main.java.br.com.sistemabancario.view;
 
 import javax.swing.JOptionPane;
-import banco.controller.BancoController;
-import banco.model.agencia.Agencia;
-import banco.model.cliente.Cliente;
-import banco.model.conta.Conta;
-import banco.utils.BancoUtils;
 
-import static banco.controller.BancoController.newClienteType;
+import main.java.br.com.sistemabancario.controller.BancoController;
+import main.java.br.com.sistemabancario.model.agencia.Agencia;
+import main.java.br.com.sistemabancario.model.cliente.Cliente;
+import main.java.br.com.sistemabancario.model.conta.Conta;
+import main.java.br.com.sistemabancario.utils.BancoUtils;
 
 
 public class Main {
@@ -104,7 +103,7 @@ public class Main {
                                     break;
 
                                 case 3:
-                                    BancoUtils.messageView("Ate logo!\n Encerrando...");
+                                    BancoUtils.messageView("\n Encerrando...");
                                     break;
 
                                 default:
@@ -122,7 +121,7 @@ public class Main {
                         BancoUtils.messageView("NÃO HÁ CONTAS CADASTRADAS NO MOMENTO. ");
                     }
                     BancoUtils.messageView(
-                        "A Agência" +
+                        "A Agência " +
                         agencia.getNumber() + " - " +
                         agencia.getName() +
                         " possui " +
@@ -135,6 +134,7 @@ public class Main {
                 } break;
             }
         } while ((mainMenu.equals("1") || (mainMenu.equals("2"))));
+        BancoUtils.messageView("Encerrando Sistema...");
     }
 }
 

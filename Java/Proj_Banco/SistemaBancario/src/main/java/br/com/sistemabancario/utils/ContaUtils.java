@@ -1,8 +1,8 @@
-package banco.utils;
+package main.java.br.com.sistemabancario.utils;
 
-import banco.model.conta.Conta;
-import banco.model.conta.ContaCorrente;
-import banco.model.conta.ContaPoupanca;
+import main.java.br.com.sistemabancario.model.conta.Conta;
+import main.java.br.com.sistemabancario.model.conta.ContaCorrente;
+import main.java.br.com.sistemabancario.model.conta.ContaPoupanca;
 
 public class ContaUtils {
     // => Valida ContaPoupanca

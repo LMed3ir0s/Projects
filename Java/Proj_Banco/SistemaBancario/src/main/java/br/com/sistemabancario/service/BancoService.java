@@ -1,14 +1,14 @@
-package banco.service;
+package main.java.br.com.sistemabancario.service;
 
-import banco.model.agencia.Agencia;
-import banco.model.cliente.PessoaFisica;
-import banco.model.cliente.PessoaJuridica;
-import banco.model.conta.Conta;
-import banco.model.conta.ContaCorrente;
-import banco.model.conta.ContaPoupanca;
-import banco.model.cliente.Cliente;
-import banco.utils.BancoUtils;
-import banco.utils.ContaUtils;
+import main.java.br.com.sistemabancario.model.agencia.Agencia;
+import main.java.br.com.sistemabancario.model.cliente.PessoaFisica;
+import main.java.br.com.sistemabancario.model.cliente.PessoaJuridica;
+import main.java.br.com.sistemabancario.model.conta.Conta;
+import main.java.br.com.sistemabancario.model.conta.ContaCorrente;
+import main.java.br.com.sistemabancario.model.conta.ContaPoupanca;
+import main.java.br.com.sistemabancario.model.cliente.Cliente;
+import main.java.br.com.sistemabancario.utils.BancoUtils;
+import main.java.br.com.sistemabancario.utils.ContaUtils;
 
 public class BancoService {
 
