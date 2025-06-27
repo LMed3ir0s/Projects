@@ -13,67 +13,6 @@ O objetivo principal deste projeto é praticar conceitos de **orientação a obj
 
 ---
 
-## ⚙️ Instalação
-
-### 📦 Requisitos
-
-* Java 17+
-* IntelliJ IDEA (ou outro IDE compatível)
-* Git
-
-### 🛠 Passo a passo:
-
-```bash
-# Clone o repositório principal
-git clone https://github.com/LMed3ir0s/Projects
-
-# Acesse a pasta do projeto
-cd Projects/Java/SistemaBancario
-
-```
-
-## 📂 Estrutura planejada
-```bash
-SistemaBancario/
-├── model/
-│   ├── cliente/
-│   └── conta/
-├── controller/
-│   └── ContaController.java (planejado)
-├── service/
-│   └── ContaService.java (planejado)
-└── view/
-    └── Main.java
-```
-O projeto está sendo estruturado com foco em organização e boas práticas de desenvolvimento.
-
----
-
-## 📂 Estrutura atual do projeto
-
-```bash
-SistemaBancario/
-├── model/
-│   ├── cliente/
-│   │   ├── Cliente.java
-│   │   ├── PessoaFisica.java
-│   │   └── PessoaJuridica.java
-│   ├── conta/
-│   │   ├── Conta.java
-│   │   ├── ContaCorrente.java
-│   │   └── ContaPoupanca.java
-├── view/
-│   └── Main.java
-├── controller/
-│   ├── BancoController.java
-├── utils/
-│   ├── BancoUtils.java
-├── service/
-│   └── BancoService.java
-
-```
----
-
 ## ▶️ Funcionalidades atuais:
 - Cadastro de clientes com validação de dados
 
@@ -116,7 +55,7 @@ O autor não se responsabiliza por danos, perdas ou mau uso decorrentes do uso d
 ## 👨‍💻 Autor
 
 **Lucas Medeiros**
-Desenvolvedor Java / Python | QA Tester | Engenheiro Civil
+Desenvolvedor Fullstack | Background em Engenharia Civil
 [GitHub](https://github.com/LMed3ir0s)
 
 ---
