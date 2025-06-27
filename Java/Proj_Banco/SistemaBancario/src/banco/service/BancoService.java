@@ -9,14 +9,28 @@ import banco.model.conta.ContaPoupanca;
 import banco.model.cliente.Cliente;
 import banco.utils.BancoUtils;
 import banco.utils.ContaUtils;
+=======
+import main.java.br.com.sistemabancario.dao.*;
+import main.java.br.com.sistemabancario.model.agencia.Agencia;
+import main.java.br.com.sistemabancario.model.cliente.PessoaFisica;
+import main.java.br.com.sistemabancario.model.cliente.PessoaJuridica;
+import main.java.br.com.sistemabancario.model.conta.Conta;
+import main.java.br.com.sistemabancario.model.conta.ContaCorrente;
+import main.java.br.com.sistemabancario.model.conta.ContaPoupanca;
+import main.java.br.com.sistemabancario.model.cliente.Cliente;
+import main.java.br.com.sistemabancario.utils.BancoUtils;
+import main.java.br.com.sistemabancario.utils.ContaUtils;
 
 public class BancoService {
+
+
 
     // => Metodo cria Agencia
     public  static Agencia criarAgencia(int number, String name){
         BancoUtils.validaCampoObjeto(number,"NUMERO AGENCIA");
         BancoUtils.validaCampoObjeto(name,"NOME AGENCIA");
         var agencia = new Agencia(number,name);
+        Container.agenciaDAO.save(agencia);
         return agencia;
     }
 
@@ -27,6 +41,7 @@ public class BancoService {
         BancoUtils.validaCampoObjeto(city,"CIDADE");
         BancoUtils.validaCampoObjeto(state,"ESTADO");
         var clientePessoaFisica = new PessoaFisica(name, cpf, city, state);
+        Container.pessoaFisicaDAO.save(clientePessoaFisica);
         return clientePessoaFisica;
     }
 
@@ -61,7 +76,6 @@ public class BancoService {
         BancoUtils.validaCampoObjeto(conta,"Conta");
         ContaUtils.validaContaPoupanca(conta);
         ContaUtils.validaAplicacaoRendimentoContaPoupanca(value);
-
         ContaPoupanca poupanca = (ContaPoupanca) conta; // => Casting do obj conta da classe Conta para ContaPoupanca
         var application = poupanca.applicationYield(value);
         return application;
@@ -70,7 +84,6 @@ public class BancoService {
     // => Aplica juros ContaCorrente
     public double applicationJuros(Conta conta){
         ContaUtils.validaContaCorrente(conta);
-
         ContaCorrente corrente = (ContaCorrente) conta; // => Casting do obj conta da classe Conta para ContaCorrente
         var application = corrente.applicationJuros();
         return application;
