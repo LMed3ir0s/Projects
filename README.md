@@ -10,6 +10,7 @@ Este repositório é dedicado a armazenar todos os projetos de estudo e prática
 ```bash
 Projects/
 ├── Java/
+│   ├── Proj_Balanço_Financeiro # Projeto Fullstack
 │   ├── Proj_Banco/            # Sistema bancário simples com Java, POO e organização baseada em MVC
 │   └── Proj_EncurtadorURL/    # Encurtador de URLs com Spring Boot, arquitetura em camadas, uso de UUID
 ├── Python/
