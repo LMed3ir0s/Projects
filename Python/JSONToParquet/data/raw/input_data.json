@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nome": "Produto A",
+        "categoria": "Eletrônicos",
+        "valor": 199.99,
+        "data_criacao": "2025-10-01T12:00:00"
+    },
+    {
+        "id": 2,
+        "nome": "Produto B",
+        "categoria": "Livros",
+        "valor": 49.90,
+        "data_criacao": "2025-10-05T09:30:00"
+    },
+    {
+        "id": 3,
+        "nome": "Produto C",
+        "categoria": "Esportes",
+        "valor": 299.50,
+        "data_criacao": "2025-10-10T15:45:00"
+    }
+]
