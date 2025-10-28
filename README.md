@@ -14,18 +14,10 @@ Projects/
 │   ├── Proj_Banco/            # Sistema bancário simples com Java, POO e organização baseada em MVC
 │   └── Proj_EncurtadorURL/    # Encurtador de URLs com Spring Boot, arquitetura em camadas, uso de UUID
 ├── Python/
-│   └── ConversorBinario/      # Conversor de decimal para binário com POO e histórico salvo em JSON 
+│   └── ConversorBinario/      # Conversor de decimal para binário com POO e histórico salvo em JSON
+│   └── ConversorBinario/      # Conversor de JSON par Parquet em Spark executado em multi processamento
 ...
 
 ```
 
-Cada subpasta representa um projeto específico, com seu próprio código-fonte, `README.md` descritivo e controle de versão. Essa estrutura facilita o aprendizado, versionamento e reaproveitamento de códigos em diferentes tecnologias.
-
-## 🎯 Objetivo
-
-Manter um histórico organizado e transparente, documentando o progresso e a evolução de cada projeto com boas práticas de desenvolvimento.
-
 ---
-
-Para mais detalhes, acesse o `README.md` dentro de cada pasta de projeto.
-
