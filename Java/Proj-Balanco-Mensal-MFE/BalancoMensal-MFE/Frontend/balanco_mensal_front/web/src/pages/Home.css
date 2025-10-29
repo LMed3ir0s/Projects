@@ -1,0 +1,63 @@
+/* HOME CSS*/
+
+.home-container {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    color: white
+}
+
+.home-container p {
+    font-size: 1.2rem;
+}
+
+.project-intro h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.project-intro h2 {
+    margin-top: 0.4rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.project-intro ul {
+    background-color: white;
+    border-left: 4px solid black;
+    border-radius: 20px;
+    padding: 1.2rem;
+    list-style: none;
+    padding-left: 0.4;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 2rem;
+    color: black
+
+}
+
+.project-intro li {
+    margin-bottom: 0.5rem;
+    font-size: 1.0rem;
+
+}
+
+.project-intro li strong {
+    font-weight: 700;
+}
+
+.home-container a {
+    background-color: #F59E0B;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    width: fit-content;
+    justify-content: center;
+
+
+}
+
+.home-container a:hover {
+    background-color: black;
+}

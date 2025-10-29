@@ -1,0 +1,51 @@
+/* NAVBAR CSS*/
+
+/* Define a aparência da navbar inteira */
+.navbar {
+  background-color: black;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin: 12px 28px 4px;
+  position: flex;
+  z-index: 999;
+}
+
+/* Estiliza a lista de navegação para ficar em linha (horizontal) */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo de cada link da navbar */
+.nav-item .nav-link {
+  background-color: white;
+  color: black;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  display: block;
+  align-items: center;
+}
+
+/* Efeito quando o mouse passa por cima do link */
+.nav-item .nav-link:hover {
+  background-color: black;
+  color: #f0f0f0;/* Cor ao passar o mouse */
+  transform: scale(1.15);    /* Leve aumento de escala para destaque */
+}
+
+.nav-icon {
+    width: 21px;      /* Largura da imagem */
+    height: 21px;     /* Altura da imagem */
+    margin-right: 8px; /* Espaço entre a imagem e o texto */
+    vertical-align: middle; /* Alinha a imagem com o texto */
+}
+

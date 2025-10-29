@@ -1,0 +1,15 @@
+/* LISTAR GASTOS CSS*/
+
+.listar-gastos-form-wrapper{
+    width: 12rem;
+    border-radius: 8px;
+    color: white;
+    list-style: none;
+    padding: 0.2rem;
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+
+.filtro-categoria-voltar-wrapper {
+
+}

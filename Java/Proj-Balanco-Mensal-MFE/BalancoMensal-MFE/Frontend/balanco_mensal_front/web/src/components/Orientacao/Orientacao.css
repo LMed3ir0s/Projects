@@ -1,0 +1,22 @@
+/* ORIENTACAO CSS*/
+
+.orientacao {
+    background-color: white;
+    border-left: 4px solid black;
+    padding: 0.8rem 1rem;
+    margin-top: 1.4rem auto;
+    font-size: 1.2rem;
+    color: black;
+    border-radius: 20px;
+    text-align: center;
+    width: fit-content;
+
+
+}
+
+.orientacao-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    padding: 0rem 0.8rem;
+}

@@ -1,0 +1,26 @@
+/* DASHBORAD CSS*/
+
+.dashboard-container {
+    text-align: centerc;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    display: inline-block;
+    padding: 2.0rem;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+
+.dashboard-container h1 {
+    margin-top: 0.4rem;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-container p {
+    font-size: 1.2rem;
+}
+
+.dashboard-intro {
+
+}

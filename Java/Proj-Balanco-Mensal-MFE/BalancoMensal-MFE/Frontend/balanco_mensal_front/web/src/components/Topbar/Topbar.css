@@ -1,0 +1,11 @@
+.topbar-container h1{
+   margin: 4px 28px 4px;
+   background-color: black;       /* Cor de fundo */
+   font-family: 'Nunito', sans-serif;
+   font-size: 13px;
+   font-weight: 600;
+   padding: 0.4rem 1rem;
+   border-radius: 80px;
+   width: fit-content;
+   z-index: 1000;
+}

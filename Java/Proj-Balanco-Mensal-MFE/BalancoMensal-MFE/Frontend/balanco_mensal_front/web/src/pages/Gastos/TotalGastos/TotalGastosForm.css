@@ -1,0 +1,19 @@
+.form-total_gastos {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-total_gastos button {
+  padding: .8rem;
+  border: none;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-total_gastos button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

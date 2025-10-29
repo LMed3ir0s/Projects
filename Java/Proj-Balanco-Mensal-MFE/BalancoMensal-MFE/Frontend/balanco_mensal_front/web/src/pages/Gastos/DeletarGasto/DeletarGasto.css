@@ -1,0 +1,17 @@
+/* DELETAR GASTOS CSS*/
+
+.deletar-form-wrapper{
+    width: fit-content;
+    background-color: #F59E0B;
+    border-radius: 20px;
+    color: white;
+    list-style: none;
+    padding: 1.2rem;
+    text-align: left;
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+
+.deletar-voltar-wrapper {
+
+}
