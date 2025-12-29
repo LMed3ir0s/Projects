@@ -1,4 +1,4 @@
-# ecommerce-microservices
+# 🛒 ecommerce-microservices **(em desenvolvimento)**
 
 1. Requisitos
 
@@ -36,5 +36,5 @@ Infraestrutura de suporte:
 - **Service Discovery** (Eureka) → registro e descoberta automática dos microserviços.
 - **Config Server** (Spring Cloud Config) → centralizar configurações.
 - **Banco de dados**: PostgreSQL (cada serviço com seu schema).
-- **Cache/Mensageria**: Redis ou RabbitMQ (para fila de pedidos).
+- **Cache/Mensageria**: RabbitMQ (para fila de pedidos).
 - **Frontend**: React + TailwindCSS (SPA) → consumo das APIs.
