@@ -12,7 +12,7 @@ Este repositório é dedicado a armazenar todos os projetos de estudo e prática
 |-------|----------|
 | [☕ Java](Java/) | [Balanço Mensal MFE](Java/Balanco-Mensal-MFE) / [Banco MVC](Java/Banco) / [Encurtador URL](Java/EncurtadorURL) / [ECommerce](ECommerce-Microservices) |
 | [🐍 Python](Python/) | [Conversor Binário](Python/ConversorBinario) / [JSON → Parquet](Python/JSONToParquet) |
-| [🐦 NestJS](NestJS/) | [API Target Sistemas](NestJS/API-Target-Sistemas) |
+| [🐦 NestJS](NestJS/) | [API Target Sistemas](NestJS/target-sistemas-api) |
 | [🔗 Fullstack](Fullstack/) | [DASH Monitoramento](Fullstack/Dash) |
 
 _* *Clique nos links para navegar.*_
