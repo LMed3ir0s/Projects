@@ -1,7 +1,5 @@
 # ⚙️ JSON to Parquet Converter
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![PySpark](https://img.shields.io/badge/pyspark-%23E25A1C.svg?style=for-the-badge&logo=apache-spark&logoColor=white)
 
 Aplicação simples para **conversão de arquivos JSON em formato Parquet**, desenvolvida com **PySpark**.  
 O objetivo é praticar conceitos de **processamento distribuído de dados** e **organização em camadas** dentro de um pipeline de ETL.
