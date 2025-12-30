@@ -1,4 +1,4 @@
-# 🏦 Conversor Binario
+# 🔢 Conversor Binario
 
 
 Projeto simples de conversão de números para binário em **Python**.

@@ -1,4 +1,4 @@
-# 🏦 Balanço Financeiro - Fullstack MFE
+# 📊 Balanço Financeiro - Fullstack MFE
 
 **Balanço Financeiro** é uma aplicação **Fullstack** voltada para o controle de finanças pessoais.  
 O sistema permite o gerenciamento de receitas, despesas e saldos mensais, além de fornecer relatórios e gráficos intuitivos.

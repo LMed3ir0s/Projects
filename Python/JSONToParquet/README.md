@@ -1,4 +1,4 @@
-# ⚙️ JSON to Parquet Converter
+# 📦 JSON to Parquet Converter
 
 
 Aplicação simples para **conversão de arquivos JSON em formato Parquet**, desenvolvida com **PySpark**.  
