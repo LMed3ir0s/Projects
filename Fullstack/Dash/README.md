@@ -6,7 +6,7 @@ Ele integra múltiplos serviços e tecnologias:
 Fluxo completo:  
 Open-Meteo → `collector-python` → RabbitMQ → `worker-go` → API NestJS → MongoDB → Frontend Dashboard / Export CSV/XLSX  
 
-### Tecnologias utilizadas:  
+### Stack :
 - Backend: NestJS (TypeScript)  
 - Frontend: React + Vite + TailwindCSS + shadcn/ui  
 - Coleta de dados + Fila: Python (`collector-python`) + RabbitMQ  
@@ -26,7 +26,7 @@ O Compose irá subir todos os serviços: backend, frontend, MongoDB, RabbitMQ, c
 
 ---
 
-### 🔗 URLs principais:
+### 🔗 URLs principais :
 
 **Serviço | URL**  
 Frontend | http://localhost:5173  
@@ -36,7 +36,7 @@ Export XLSX | http://localhost:3000/api/weather/export/xlsx
 
 ---
 
-### 👤 Usuário padrão:
+### 👤 Usuário padrão :
 
 Email: admin@dash.com  
 Senha: 123456
@@ -45,7 +45,7 @@ Permite acesso inicial ao sistema e testes de funcionalidades.
 
 ---
 
-### 🧪 Serviços:
+### 🧪 Serviços :
 
 ### 1. Collector Python
 

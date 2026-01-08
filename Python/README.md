@@ -1,8 +1,8 @@
-# 🐍 Projetos Python
+# 🐍 Python
 
 Repositório de projetos desenvolvidos em **Python**.
 
-## 📋 Projetos
+## 📋 Projetos :
 
 | Projeto | Descrição | Tecnologias |
 |---------|-----------|-------------|

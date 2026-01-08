@@ -2,7 +2,7 @@
 
 Projeto backend de encurtador de URLs desenvolvido em **Java 17** com **Spring Boot**. Transforma URLs longas em versões curtas e úteis. Este sistema pode ser utilizado em aplicações web, redes sociais e sistemas de marketing.
 
-### Tecnologias utilizadas:
+### Stack :
 
 * Java 17
 * Spring Boot 3.2.5
@@ -10,7 +10,7 @@ Projeto backend de encurtador de URLs desenvolvido em **Java 17** com **Spring B
 
 ---
 
-### ▶️ Como usar
+### Como usar
 
 ```bash
 1. Acesse: http://localhost:8080/shorten
@@ -37,7 +37,7 @@ Projeto backend de encurtador de URLs desenvolvido em **Java 17** com **Spring B
 
 ---
 
-### 🧪 Progresso:
+### Progresso:
 
 * [x] Estrutura inicial do projeto
 * [x] Controller, Service, Repository e Model

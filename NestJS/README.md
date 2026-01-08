@@ -1,8 +1,8 @@
-# 🐦 Projetos NestJS
+# 🐦 NestJS
 
 Repositório de projetos desenvolvidos em **NestJS**.
 
-## 📋 Projetos
+## 📋 Projetos :
 
 | Projeto | Descrição | Tecnologias |
 |---------|-----------|-------------|

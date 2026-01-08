@@ -1,8 +1,8 @@
-# ☕ Projetos Java
+# ☕ Java
 
 Repositório de projetos desenvolvidos em **Java**.
 
-## 📋 Projetos
+## 📋 Projetos :
 
 | Projeto | Descrição | Tecnologias |
 |---------|-----------|-------------|

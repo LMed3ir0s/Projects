@@ -1,9 +1,9 @@
-# 🔗 Projetos Fullstack
+# 🔗 Fullstack
 
 Repositório de **Sistemas completos** frontend + backend + infraestrutura.
 Projetos reais que integram múltiplas tecnologias.
 
-## 📋 Projetos
+## 📋 Projetos :
 
 | Projeto | Descrição | Stack Tecnológica |
 |---------|-----------|-------------------|

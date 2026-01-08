@@ -6,13 +6,13 @@ Atualmente, todas as operações trabalham em memória (arquivos JSON em `src/da
 
 ---
 
-### 🧩 Módulos:
+### Módulos :
 
 - **Sales**: Cálcula comissões a partir das vendas carregadas dos arquivos JSON (simulação de um fluxo ETL fixo) e já possui um método preparado para receber vendas via body request em uma futura evolução.
 - **Inventory**: Aplica movimentações de estoque de entrada (`IN`) e saída (`OUT`) sobre um inventário inicial.
 - **Finance**: Realiza cálculos financeiros de juros/multa diária sobre pagamentos em atraso.
 
-### 🏗️ Camadas:
+### Camadas :
 
 - `config/`: Centraliza configurações e "números mágicos" usados pelos módulos.
   - `config/commission`: Define as faixas de valor e porcentagens de comissão.
@@ -25,7 +25,7 @@ Atualmente, todas as operações trabalham em memória (arquivos JSON em `src/da
   - `dto/`: DTOs para validar entrada e saída das rotas.
   - `domain/`: Modelos e entidades de domínio (em memória).
 
-### 🌐 Endpoints:
+### Endpoints :
 
 - `http://localhost:3000/docs`  
   Interface **Swagger** com a documentação interativa da API.
@@ -44,7 +44,7 @@ Atualmente, todas as operações trabalham em memória (arquivos JSON em `src/da
   
 ---
 
-### 🚀 Como rodar o projeto
+### Como rodar o projeto :
 
 1. Certifique-se de ter **Node.js** (e npm) instalado.
 2. Acesse a pasta raiz do projeto (`package.json`).

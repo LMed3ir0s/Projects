@@ -7,15 +7,15 @@ A arquitetura segue o padrão **Micro Frontends (MFE)** com módulos de **fronte
 
 ---
 
-### 🛠️ Tecnologias utilizadas:
+### Stack
 
-### Backend
+### Backend :
 - **Java 17+**
 - **Spring Boot**
 - **JPA / Hibernate**
 - **PostgreSQL**
 
-### Frontend
+### Frontend :
 - **React**
 - **JavaScript**
 - **Axios** para requisições HTTP  

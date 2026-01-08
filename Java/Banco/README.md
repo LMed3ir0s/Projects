@@ -6,7 +6,7 @@ O objetivo principal deste projeto é praticar conceitos de **Programação Orie
 
 ---
 
-### ▶️ Funcionalidades atuais:
+### Funcionalidades atuais :
 
 - Cadastro de clientes com validação de dados
 

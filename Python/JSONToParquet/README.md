@@ -6,7 +6,7 @@ O objetivo é praticar conceitos de **processamento distribuído de dados** e **
 
 ---
 
-## 🧩 Estrutura do projeto
+###  Estrutura do projeto :
 
 O fluxo é dividido em **três camadas principais**:
 
@@ -21,7 +21,7 @@ Grava os DataFrames transformados em formato **Parquet**, utilizando partições
 
 ---
 
-## 🛠️ Tecnologias
+### Stack :
 
 - **Python 3.10+**
 - **Apache Spark / PySpark**
