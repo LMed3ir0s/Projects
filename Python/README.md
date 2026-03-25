@@ -8,5 +8,6 @@ Repositório de projetos desenvolvidos em **Python**.
 |---------|-----------|-------------|
 | [ConversorBinario](ConversorBinario) | Decimal → Binário | Python |
 | [JSONToParquet](JSONToParquet) | JSON → Parquet | Python / PySpark |
+| [AgendaDjango](AgendaDjango) | Agenda de Contatos | Python / Django / SQL|
 
 ---
