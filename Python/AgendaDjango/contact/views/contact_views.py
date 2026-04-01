@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from contact.models import Contact
-from django.http import Http404
+# from django.http import Http404
 
 def index(request):
     contacts = Contact.objects.filter(show=True).order_by('-id')
@@ -9,6 +9,7 @@ def index(request):
 
     context = {
         'contacts': contacts,
+        'site_title': 'Contatos - '
     }
 
     return render(
@@ -25,10 +26,13 @@ def contact(request, contact_id):
 
     single_contact = get_object_or_404(Contact, pk=contact_id, show=True)
 
-    print(single_contact.query)
+    site_title = f'{single_contact.first_name} {single_contact.last_name} - '
+
+    # print(single_contact.query)
 
     context = {
         'contact': single_contact,
+        'site_title': site_title
     }
 
     return render(
