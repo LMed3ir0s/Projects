@@ -62,12 +62,12 @@ class RegisterForm(UserCreationForm):
             'first_name', 'last_name', 'email', 'username', 'password1', 'password2',
         )
 
-        def clean_email(self):
-            email = self.cleaned_data.get('email')
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
 
-            if User.objects.filter(email=email).exists():
-                self.add_error(
-                    'email', ValidationError('E-mail existente', code='invalid')
-                )
+        if User.objects.filter(email=email).exists():
+            self.add_error(
+                'email', ValidationError('E-mail existente', code='invalid')
+            )
 
             return email
